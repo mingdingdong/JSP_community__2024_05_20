@@ -15,7 +15,7 @@ public class GugudanServlet extends HttpServlet {
         int dan = rq.getIntParam("dan",0);
         int limit = rq.getIntParam("limit",0);
 
-        resp.getWriter().append("<h1>%d단</h1>".formatted(dan));
+        rq.appendBody("<h1>%d단</h1>".formatted(dan));
         for (int i = 1; i <= limit; i++) {
             resp.getWriter().append("<div>%d * %d = %d</div>".formatted(dan, i , dan*i));
         }
